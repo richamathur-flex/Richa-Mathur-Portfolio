@@ -1,1173 +1,1030 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Richa Mathur — AI Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="description" content="AI Engineer specializing in Agentic AI Systems, LLM Orchestration, RAG Architectures & Cloud Solutions — building intelligent automation for Fortune 500 enterprises." />
+<meta name="author" content="Richa Mathur" />
+
+<!-- Open Graph / Facebook / LinkedIn / WhatsApp / Slack -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://richamathur-flex.github.io/Portfolio/" />
+<meta property="og:title" content="Richa Mathur — AI Engineer" />
+<meta property="og:description" content="AI Engineer specializing in Agentic AI Systems, LLM Orchestration, RAG Architectures & Cloud Solutions — building intelligent automation for Fortune 500 enterprises." />
+<meta property="og:site_name" content="Richa Mathur" />
+<meta property="og:image" content="https://richamathur-flex.github.io/Portfolio/preview.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Richa Mathur — AI Engineer" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Richa Mathur — AI Engineer" />
+<meta name="twitter:description" content="AI Engineer specializing in Agentic AI Systems, LLM Orchestration, RAG Architectures & Cloud Solutions." />
+<meta name="twitter:image" content="https://richamathur-flex.github.io/Portfolio/preview.png" />
+
+<!-- Favicon (inline SVG, mint "RM.") -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050608'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia, serif' font-weight='900' font-size='30' fill='%234ade80'%3ERM%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #0a0a0f;
-    --bg-card: #12121a;
-    --bg-card-hover: #1a1a28;
-    --accent: #6ee7b7;
-    --accent-dim: #6ee7b720;
-    --accent-glow: #6ee7b740;
-    --text: #e8e8ed;
-    --text-dim: #8888a0;
-    --text-muted: #55556a;
-    --border: #22223a;
-    --gradient-1: linear-gradient(135deg, #6ee7b7, #3b82f6);
-    --gradient-2: linear-gradient(135deg, #6ee7b7 0%, #a78bfa 50%, #f472b6 100%);
-    --font-display: 'DM Serif Display', Georgia, serif;
-    --font-body: 'Sora', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --bg: #050608;
+    --bg-2: #0d1015;
+    --bg-3: #151920;
+    --bg-card: #0e1117;
+    --ink: #f5f7fa;
+    --ink-dim: #9ba3b0;
+    --ink-faint: #5c6370;
+    --accent: #4ade80;
+    --accent-glow: rgba(74, 222, 128, 0.5);
+    --cyan: #22d3ee;
+    --purple: #a78bfa;
+    --pink: #f0abfc;
+    --rose: #fda4af;
+    --line: rgba(245, 247, 250, 0.06);
+    --line-strong: rgba(245, 247, 250, 0.12);
+    --display: 'Fraunces', Georgia, serif;
+    --body: 'Manrope', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+    --radius: 14px;
+    --radius-lg: 20px;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-
   body {
-    font-family: var(--font-body);
     background: var(--bg);
-    color: var(--text);
+    color: var(--ink);
+    font-family: var(--body);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    line-height: 1.7;
+  }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--accent); color: #0a1410; }
+
+  /* Reusable gradient text */
+  .gradient-text {
+    background: linear-gradient(90deg,
+      #ffffff 0%,
+      #ffffff 20%,
+      #67e8f9 42%,
+      #a78bfa 62%,
+      #f0abfc 82%,
+      #fda4af 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
-  ::selection {
-    background: var(--accent);
-    color: var(--bg);
-  }
-
-  /* ===== NAVIGATION ===== */
+  /* Nav */
   nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 1.5rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(5, 6, 8, 0.7);
     backdrop-filter: blur(20px);
-    background: #0a0a0fcc;
-    border-bottom: 1px solid var(--border);
-    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--line);
   }
-
-  .nav-logo {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    color: var(--accent);
-    text-decoration: none;
+  .logo {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 1.6rem;
     letter-spacing: -0.02em;
+    color: var(--accent);
   }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
+  .nav-links { display: flex; gap: 2.5rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
   .nav-links a {
-    color: var(--text-dim);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    transition: color 0.3s;
-    position: relative;
+    color: var(--ink-dim);
+    transition: color 0.2s;
   }
-
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent);
-    transition: width 0.3s;
-  }
-
   .nav-links a:hover { color: var(--accent); }
-  .nav-links a:hover::after { width: 100%; }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 4px;
-  }
-  .hamburger span {
-    width: 24px;
-    height: 2px;
-    background: var(--text);
-    transition: 0.3s;
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
   }
 
-  /* ===== HERO ===== */
+  /* HERO */
   .hero {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 8rem 2rem 5rem;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
     position: relative;
-    padding: 6rem 2rem 4rem;
     overflow: hidden;
+    background-image:
+      linear-gradient(rgba(245, 247, 250, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 247, 250, 0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
   }
-
   .hero::before {
     content: '';
     position: absolute;
-    top: -200px;
-    right: -200px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    animation: pulse 6s ease-in-out infinite;
+    top: 5%; right: -8%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.16), transparent 65%);
+    filter: blur(60px);
+    z-index: 0;
+    animation: drift 24s ease-in-out infinite;
   }
-
   .hero::after {
     content: '';
     position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #3b82f630 0%, transparent 70%);
-    animation: pulse 8s ease-in-out infinite reverse;
+    bottom: 5%; left: -8%;
+    width: 550px; height: 550px;
+    background: radial-gradient(circle, rgba(34, 100, 220, 0.22), transparent 65%);
+    filter: blur(60px);
+    z-index: 0;
+    animation: drift 30s ease-in-out infinite reverse;
   }
-
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-50px, 40px); }
+  }
   @keyframes pulse {
-    0%, 100% { opacity: 0.5; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.1); }
-  }
-
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--border) 1px, transparent 1px),
-      linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size: 60px 60px;
-    opacity: 0.3;
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
-  }
-
-  .hero-content {
-    max-width: 900px;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1.2rem;
-    border: 1px solid var(--accent-dim);
-    border-radius: 100px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    background: var(--accent-dim);
-    animation: fadeInUp 0.8s ease;
-  }
-
-  .hero-badge .dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: blink 2s infinite;
-  }
-
-  @keyframes blink {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+  }
+  .hero-inner {
+    max-width: 900px; margin: 0 auto;
+    width: 100%;
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .status-pill {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    padding: 0.65rem 1.5rem;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 999px;
+    color: var(--accent);
+    background: rgba(74, 222, 128, 0.08);
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    margin-bottom: 3rem;
+  }
+  .status-pill::before {
+    content: ''; width: 7px; height: 7px;
+    background: var(--accent); border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent-glow);
+    animation: pulse 2s infinite;
+  }
+  h1.hero-title {
+    font-family: var(--display);
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 2.25rem;
+    font-variation-settings: "opsz" 144;
+  }
+  .hero-lede {
+    font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+    color: var(--ink-dim);
+    max-width: 640px;
+    margin: 0 auto 2.75rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .hero-lede strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .cta-row {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 5rem;
+  }
+  .btn {
+    padding: 1rem 2rem;
+    font-family: var(--body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #0a1410;
+    border-color: var(--accent);
+  }
+  .btn-primary:hover {
+    background: #6ee7a0;
+    border-color: #6ee7a0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(74, 222, 128, 0.25);
+  }
+  .btn-ghost { background: rgba(245, 247, 250, 0.02); }
+  .btn-ghost:hover {
+    border-color: var(--ink);
+    background: rgba(245, 247, 250, 0.05);
+    transform: translateY(-2px);
   }
 
-  .hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 7vw, 5.5rem);
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    width: 100%;
+    max-width: 900px;
+  }
+  .stat { padding: 1rem; text-align: center; }
+  .stat-num {
+    font-family: var(--display);
+    font-size: clamp(2.25rem, 3.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.8rem;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  @media (max-width: 768px) {
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  }
+
+  /* Section base */
+  section {
+    padding: 7rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .section-tag {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-family: var(--display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
-    animation: fadeInUp 0.8s ease 0.1s both;
+    max-width: 900px;
   }
-
-  .hero h1 .gradient-text {
-    background: var(--gradient-2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-subtitle {
-    font-size: 1.15rem;
-    color: var(--text-dim);
-    max-width: 650px;
-    margin: 0 auto 2.5rem;
-    font-weight: 300;
-    line-height: 1.8;
-    animation: fadeInUp 0.8s ease 0.2s both;
-  }
-
-  .hero-cta {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fadeInUp 0.8s ease 0.3s both;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.9rem 2rem;
-    border-radius: 8px;
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
-  }
-
-  .btn-primary {
-    background: var(--accent);
-    color: var(--bg);
-  }
-
-  .btn-primary:hover {
-    box-shadow: 0 0 30px var(--accent-glow);
-    transform: translateY(-2px);
-  }
-
-  .btn-outline {
-    border: 1px solid var(--border);
-    color: var(--text);
-    background: transparent;
-  }
-
-  .btn-outline:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-2px);
-  }
-
-  .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 4rem;
-    animation: fadeInUp 0.8s ease 0.4s both;
-  }
-
-  .stat-item {
-    text-align: center;
-  }
-
-  .stat-number {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    color: var(--accent);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-top: 0.3rem;
-  }
-
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ===== SECTIONS ===== */
-  section {
-    padding: 6rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 0.8rem;
-  }
-
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-  }
-
-  .section-desc {
-    color: var(--text-dim);
+  .section-lede {
+    font-size: 1.1rem;
+    color: var(--ink-dim);
     max-width: 600px;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     font-weight: 300;
   }
 
-  .divider {
-    width: 100%;
-    height: 1px;
-    background: var(--border);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  /* ===== ABOUT ===== */
+  /* ABOUT */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
   }
-
   .about-text p {
-    color: var(--text-dim);
+    font-size: 1.05rem;
+    color: var(--ink-dim);
     margin-bottom: 1.5rem;
     font-weight: 300;
-    font-size: 1.02rem;
+    line-height: 1.7;
   }
-
-  .about-highlights {
+  .about-text strong { color: var(--ink); font-weight: 500; }
+  .pillars {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
   }
-
-  .highlight-card {
-    padding: 1.5rem;
+  .pillar {
     background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.5rem;
+    transition: all 0.3s;
+  }
+  .pillar:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-2px);
+  }
+  .pillar-icon {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    display: block;
+    line-height: 1;
+  }
+  .pillar-title {
+    font-family: var(--body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .pillar-desc {
+    font-size: 0.88rem;
+    color: var(--ink-dim);
+    line-height: 1.55;
+  }
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   }
 
-  .highlight-card:hover {
-    border-color: var(--accent-dim);
-    background: var(--bg-card-hover);
-    transform: translateY(-3px);
-  }
-
-  .highlight-icon {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .highlight-title {
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .highlight-desc {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-  }
-
-  /* ===== EXPERIENCE ===== */
-  .timeline {
+  /* EXPERIENCE */
+  .exp-wrapper {
     position: relative;
     padding-left: 3rem;
   }
-
-  .timeline::before {
+  .exp-wrapper::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
+    left: 6px; top: 8px; bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, var(--accent), var(--border));
+    background: linear-gradient(180deg, var(--accent), transparent 95%);
   }
-
-  .timeline-item {
+  .exp-item {
     position: relative;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    transition: all 0.3s ease;
+    margin-bottom: 2.5rem;
   }
-
-  .timeline-item:hover {
-    border-color: var(--accent-dim);
-    box-shadow: 0 4px 30px #00000040;
-    transform: translateX(5px);
-  }
-
-  .timeline-item::before {
+  .exp-item::before {
     content: '';
     position: absolute;
-    left: -3rem;
-    top: 2.3rem;
-    width: 12px;
-    height: 12px;
+    left: -3rem; top: 2.5rem;
+    width: 14px; height: 14px;
     background: var(--accent);
     border-radius: 50%;
-    border: 3px solid var(--bg);
-    transform: translateX(-5px);
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.18), 0 0 18px rgba(74, 222, 128, 0.4);
   }
-
-  .timeline-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  .exp-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+  }
+  .exp-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
   }
-
-  .timeline-role {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    letter-spacing: -0.01em;
+  .exp-role {
+    font-family: var(--display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
   }
-
-  .timeline-company {
-    color: var(--accent);
-    font-weight: 500;
-    font-size: 0.95rem;
-  }
-
-  .timeline-date {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    padding: 0.3rem 0.8rem;
-    border: 1px solid var(--border);
-    border-radius: 100px;
+  .exp-company { color: var(--accent); font-size: 0.95rem; font-weight: 500; }
+  .exp-date {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    color: var(--ink-dim);
     white-space: nowrap;
+    letter-spacing: 0.05em;
   }
-
-  .timeline-category {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--accent);
+  .exp-section-title {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin: 1rem 0 0.5rem;
-    padding-top: 0.8rem;
-    border-top: 1px solid var(--border);
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin: 2rem 0 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
   }
-
-  .timeline-bullets {
-    list-style: none;
-    padding: 0;
+  .exp-section-title:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
   }
-
-  .timeline-bullets li {
-    color: var(--text-dim);
-    font-size: 0.88rem;
-    font-weight: 300;
-    padding: 0.4rem 0 0.4rem 1.2rem;
+  .exp-list { list-style: none; }
+  .exp-list li {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--ink-dim);
+    font-size: 0.95rem;
     position: relative;
     line-height: 1.6;
   }
-
-  .timeline-bullets li::before {
-    content: '▹';
+  .exp-list li::before {
+    content: '▸';
     position: absolute;
     left: 0;
     color: var(--accent);
-    font-size: 0.9rem;
+  }
+  .exp-list strong { color: var(--ink); font-weight: 600; }
+  @media (max-width: 768px) {
+    .exp-wrapper { padding-left: 2rem; }
+    .exp-item::before { left: -2rem; }
+    .exp-card { padding: 1.75rem; }
   }
 
-  /* ===== FEATURED PROJECTS ===== */
+  /* PROJECTS */
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
-
-  .project-card {
-    padding: 2rem;
+  .project {
     background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    transition: all 0.4s ease;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: all 0.3s;
     position: relative;
     overflow: hidden;
   }
-
-  .project-card::before {
+  .project::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-1);
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--cyan), var(--purple), var(--pink));
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.4s;
   }
-
-  .project-card:hover {
-    border-color: var(--accent-dim);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 40px #00000050;
+  .project:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-4px);
   }
-
-  .project-card:hover::before { opacity: 1; }
-
+  .project:hover::before { opacity: 1; }
   .project-icon {
-    width: 48px;
-    height: 48px;
+    width: 52px; height: 52px;
+    background: var(--bg-3);
     border-radius: 12px;
-    background: var(--accent-dim);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    margin-bottom: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
   }
-
   .project-title {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    margin-bottom: 0.6rem;
+    font-family: var(--display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
   }
-
   .project-desc {
-    color: var(--text-dim);
-    font-size: 0.85rem;
-    font-weight: 300;
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
+    color: var(--ink-dim);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
   }
-
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .tag {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    padding: 0.25rem 0.65rem;
-    background: var(--accent-dim);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    background: rgba(74, 222, 128, 0.06);
+    border-radius: 999px;
     color: var(--accent);
-    border-radius: 100px;
-    letter-spacing: 0.02em;
+  }
+  @media (max-width: 1000px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .projects-grid { grid-template-columns: 1fr; }
   }
 
-  /* ===== SKILLS ===== */
+  /* SKILLS */
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
-
-  .skill-group {
-    padding: 2rem;
+  .skill-card {
     background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    transition: all 0.3s ease;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
   }
-
-  .skill-group:hover {
-    border-color: var(--accent-dim);
-    transform: translateY(-3px);
-  }
-
-  .skill-group-title {
-    font-family: var(--font-mono);
+  .skill-cat-title {
+    font-family: var(--mono);
     font-size: 0.72rem;
-    color: var(--accent);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
   }
-
-  .skill-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .skill-tag {
+  .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-pill {
     font-size: 0.82rem;
-    padding: 0.4rem 0.9rem;
-    background: #ffffff08;
-    border: 1px solid #ffffff10;
+    padding: 0.5rem 1rem;
+    background: var(--bg-3);
+    color: var(--ink-dim);
+    border: 1px solid var(--line);
     border-radius: 8px;
-    color: var(--text-dim);
-    font-weight: 400;
-    transition: all 0.3s;
+    transition: all 0.2s;
+    cursor: default;
   }
-
-  .skill-tag:hover {
-    border-color: var(--accent-dim);
+  .skill-pill:hover {
     color: var(--accent);
-    background: var(--accent-dim);
+    border-color: rgba(74, 222, 128, 0.35);
+    background: rgba(74, 222, 128, 0.06);
+  }
+  @media (max-width: 1000px) {
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .skills-grid { grid-template-columns: 1fr; }
   }
 
-  /* ===== EDUCATION & CERTS ===== */
-  .edu-certs-grid {
+  /* EDUCATION & CERTS */
+  .creds-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 4rem;
   }
-
-  .edu-card {
-    padding: 2rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    margin-bottom: 1.2rem;
-    transition: all 0.3s ease;
-  }
-
-  .edu-card:hover {
-    border-color: var(--accent-dim);
-    transform: translateY(-3px);
-  }
-
-  .edu-degree {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .edu-school {
+  .creds-sub {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
     color: var(--accent);
-    font-weight: 500;
-    font-size: 0.95rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
   }
-
+  .edu-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  .edu-degree {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .edu-school { color: var(--accent); font-size: 0.9rem; margin-bottom: 0.6rem; font-weight: 500; }
   .edu-date {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
   }
-
+  .cert-group { margin-bottom: 2.25rem; }
+  .cert-group-title {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
   .cert-list {
     list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem 1.5rem;
   }
-
-  .cert-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.8rem;
-    padding: 0.8rem 0;
-    border-bottom: 1px solid #ffffff06;
+  .cert-list li {
+    color: var(--ink-dim);
     font-size: 0.88rem;
-    color: var(--text-dim);
-    font-weight: 300;
-    transition: color 0.3s;
+    padding-left: 1.4rem;
+    position: relative;
   }
-
-  .cert-item:hover { color: var(--text); }
-
-  .cert-bullet {
+  .cert-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
     color: var(--accent);
-    font-size: 0.7rem;
-    margin-top: 0.35rem;
-    flex-shrink: 0;
+    font-size: 0.7em;
+    top: 0.35em;
+  }
+  @media (max-width: 900px) {
+    .creds-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .cert-list { grid-template-columns: 1fr; }
   }
 
-  .cert-category {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .cert-category:first-child { margin-top: 0; }
-
-  /* ===== CONTACT ===== */
-  .contact-section {
+  /* CONTACT */
+  #contact {
     text-align: center;
-    padding: 8rem 2rem;
+    padding: 9rem 2rem 6rem;
+    border-top: 1px solid var(--line);
+    max-width: 1100px;
   }
-
-  .contact-section .section-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+  #contact .section-tag { display: inline-block; }
+  #contact h2 {
+    margin: 0 auto 2rem;
+    max-width: 900px;
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
   }
-
-  .contact-section .section-desc {
-    margin: 1rem auto 3rem;
-    max-width: 500px;
+  .contact-lede {
+    font-size: 1.15rem;
+    color: var(--ink-dim);
+    max-width: 600px;
+    margin: 0 auto 3.5rem;
+    font-weight: 300;
+    line-height: 1.65;
   }
-
   .contact-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
     margin-bottom: 3rem;
   }
-
-  .contact-card {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem 1.8rem;
+  .contact-link {
+    font-size: 0.92rem;
+    padding: 1rem 1.5rem;
     background: var(--bg-card);
-    border: 1px solid var(--border);
+    border: 1px solid var(--line);
     border-radius: 12px;
-    text-decoration: none;
-    color: var(--text);
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
+    color: var(--ink-dim);
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
   }
-
-  .contact-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px #00000040;
+  .contact-link:hover {
+    border-color: rgba(74, 222, 128, 0.35);
+    color: var(--ink);
+    background: rgba(74, 222, 128, 0.05);
+    transform: translateY(-2px);
   }
+  .contact-link .icon { font-size: 1.05rem; }
 
-  .contact-icon {
-    font-size: 1.3rem;
-  }
-
-  /* ===== FOOTER ===== */
+  /* Footer */
   footer {
-    text-align: center;
+    border-top: 1px solid var(--line);
     padding: 2rem;
-    border-top: 1px solid var(--border);
+    text-align: center;
     font-size: 0.78rem;
-    color: var(--text-muted);
-    font-weight: 300;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
   }
 
-  /* ===== SCROLL ANIMATIONS ===== */
+  /* Scroll reveal */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.8s ease, transform 0.8s ease;
   }
-
   .reveal.visible {
     opacity: 1;
     transform: translateY(0);
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 900px) {
-    .about-grid, .edu-certs-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .hero-stats { gap: 2rem; }
-
-    .nav-links { display: none; }
-    .nav-links.open {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 2rem;
-      gap: 1rem;
-    }
-    .hamburger { display: flex; }
-
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .timeline { padding-left: 2rem; }
-  }
-
-  @media (max-width: 600px) {
-    .hero-stats {
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .hero-cta { flex-direction: column; align-items: center; }
-
-    .about-highlights { grid-template-columns: 1fr; }
-
-    section { padding: 4rem 1.2rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav>
-  <a href="#" class="nav-logo">RM.</a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="#" class="logo">RM<span>.</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <div class="hero-badge"><span class="dot"></span> Open to opportunities</div>
-    <h1>Richa <span class="gradient-text">Mathur</span></h1>
-    <p class="hero-subtitle">AI Engineer specializing in Agentic AI Systems, LLM Orchestration, RAG Architectures & Cloud Solutions — building intelligent automation for Fortune 500 enterprises.</p>
-    <div class="hero-cta">
+<header class="hero">
+  <div class="hero-inner">
+    <div class="status-pill">Open to Opportunities</div>
+    <h1 class="hero-title gradient-text">Richa Mathur</h1>
+    <p class="hero-lede">
+      AI Engineer specializing in <strong>Agentic AI Systems, LLM Orchestration, RAG Architectures &amp; Cloud Solutions</strong> — building intelligent automation for Fortune 500 enterprises.
+    </p>
+    <div class="cta-row">
       <a href="#contact" class="btn btn-primary">Get in Touch →</a>
-      <a href="#projects" class="btn btn-outline">View My Work</a>
+      <a href="#projects" class="btn btn-ghost">View My Work</a>
     </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-number">7+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">15+</div>
-        <div class="stat-label">Certifications</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">5+</div>
-        <div class="stat-label">AI Use Cases Shipped</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">70%</div>
-        <div class="stat-label">Process Time Reduced</div>
-      </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-num">17+</div><div class="stat-label">Certifications</div></div>
+      <div class="stat"><div class="stat-num">6+</div><div class="stat-label">AI Use Cases Shipped</div></div>
+      <div class="stat"><div class="stat-num">60%</div><div class="stat-label">Process Time Reduced</div></div>
     </div>
   </div>
-</section>
+</header>
 
-<div class="divider"></div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label">// About Me</div>
-  <div class="section-title">Engineering Intelligence<br>Into Enterprise</div>
+<section id="about" class="reveal">
+  <div class="section-tag">// About Me</div>
+  <h2>Engineering Intelligence<br/><span class="gradient-text">Into Enterprise</span></h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm an AI Engineer and Cloud Solutions Specialist with deep expertise in designing and deploying LLM-driven agentic AI systems, RAG architectures, and multi-agent orchestration across enterprise environments.</p>
-      <p>My work bridges intelligent automation with real business processes — combining hands-on experience with AI Agent Studio, OpenAI GPT, Claude, LangChain/LangGraph, Vector Search, NL2SQL, Computer Vision, and Document Understanding with deep Fusion SaaS domain knowledge across ERP, SCM, and HCM.</p>
-      <p>I've delivered production-grade AI solutions for Fortune 500 clients in Financial Services, Public Sector, and Enterprise domains — consistently reducing manual effort, improving data accessibility, and enabling conversational interfaces over complex enterprise data.</p>
+      <p>I'm an <strong>AI Engineer and Cloud Solutions Specialist</strong> with deep expertise in designing and deploying LLM-driven agentic AI systems, RAG architectures, and multi-agent orchestration across enterprise environments.</p>
+      <p>My work bridges intelligent automation with real business processes — combining hands-on experience with <strong>OpenAI GPT, Claude (Anthropic), LangChain/LangGraph, CrewAI, Vector Search, NL2SQL, Computer Vision (YOLOv8, OpenCV), and Document Understanding</strong> with certified expertise across <strong>AWS, Azure, and OCI</strong> and deep enterprise SaaS domain knowledge across ERP, SCM, and HCM.</p>
+      <p>I've delivered production-grade AI solutions for Fortune 500 clients in <strong>Financial Services, Public Sector, and Enterprise domains</strong> — consistently reducing manual effort, improving data accessibility, and enabling conversational interfaces over complex enterprise data.</p>
     </div>
-    <div class="about-highlights">
-      <div class="highlight-card">
-        <div class="highlight-icon">🤖</div>
-        <div class="highlight-title">Agentic AI</div>
-        <div class="highlight-desc">Multi-agent systems with LLM orchestration & tool use</div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-icon">🤖</span>
+        <div class="pillar-title">Agentic AI</div>
+        <div class="pillar-desc">Multi-agent systems with LLM orchestration, tool use &amp; MCP</div>
       </div>
-      <div class="highlight-card">
-        <div class="highlight-icon">🧠</div>
-        <div class="highlight-title">Cognitive AI</div>
-        <div class="highlight-desc">Computer Vision, Document Understanding & annotation pipelines</div>
+      <div class="pillar">
+        <span class="pillar-icon">🧠</span>
+        <div class="pillar-title">Cognitive AI</div>
+        <div class="pillar-desc">YOLOv8, OpenCV, Document Understanding &amp; annotation pipelines</div>
       </div>
-      <div class="highlight-card">
-        <div class="highlight-icon">☁️</div>
-        <div class="highlight-title">Cloud Native</div>
-        <div class="highlight-desc">OCI, Azure, Docker, FastAPI, production deployments</div>
+      <div class="pillar">
+        <span class="pillar-icon">☁️</span>
+        <div class="pillar-title">Multi-Cloud</div>
+        <div class="pillar-desc">AWS, Azure, OCI · Docker, Kubernetes, FastAPI</div>
       </div>
-      <div class="highlight-card">
-        <div class="highlight-icon">📊</div>
-        <div class="highlight-title">Enterprise Analytics</div>
-        <div class="highlight-desc">OAC, Power BI, Tableau, KPI dashboards at scale</div>
+      <div class="pillar">
+        <span class="pillar-icon">📊</span>
+        <div class="pillar-title">Enterprise Analytics</div>
+        <div class="pillar-desc">Power BI, Tableau, OAC, KPI dashboards at scale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <div class="section-tag">// Experience</div>
+  <h2>Where I've Built</h2>
+  <p class="section-lede">Production-grade AI systems and enterprise analytics at scale.</p>
+
+  <div class="exp-wrapper">
+    <div class="exp-item">
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Cloud Engineer — AI, Agentic Systems &amp; Analytics</div>
+            <div class="exp-company">Oracle America Inc. (Cloud Engineering Services) · Dallas, TX</div>
+          </div>
+          <div class="exp-date">Jun 2021 – Apr 2026</div>
+        </div>
+
+        <div class="exp-section-title">Agentic AI &amp; Multi-Agent Systems</div>
+        <ul class="exp-list">
+          <li>Engineered a <strong>Multi-Channel Order Entry Agent</strong>, a multi-agent system using LLM-powered document parsing and entity extraction across email, SFTP, web portal, and phone channels — normalizing orders into a canonical data model via FastAPI, staging records in a cloud data warehouse, and triggering fulfillment through ERP REST APIs, reducing processing time by <strong>~60%</strong>.</li>
+          <li>Designed and deployed an <strong>HCM Hire-to-Retire Lifecycle Agent</strong> using an AI agent orchestration platform integrated with enterprise HCM SaaS — enabling conversational self-service for offer letter generation, onboarding, benefits enrollment, and attrition risk flagging — powered by RAG with Vector Search and AI governance framework.</li>
+          <li>Built a multi-agent <strong>Financial AI workflow</strong> integrated with cloud data warehouse via MCP, enabling natural-language variance analysis across fiscal periods with zero data hallucination — agent routing logic spanning GL, AP, and AR subject areas with LangGraph-style orchestration patterns.</li>
+        </ul>
+
+        <div class="exp-section-title">Cognitive AI — Computer Vision, Document Understanding &amp; Data Annotation</div>
+        <ul class="exp-list">
+          <li>Built an end-to-end <strong>AI Vision pipeline</strong> for a Public Sector client — training computer vision and <strong>YOLOv8</strong> models on traffic surveillance data using CVAT annotation and transfer learning, deploying via FastAPI REST endpoints with a LangGraph-based multi-agent orchestration pipeline using <strong>GPT-4o Vision</strong>, delivered as three interactive Streamlit applications.</li>
+          <li>Developed an AI-driven <strong>Sales Order (Order-to-Cash) automation</strong> solution using cloud Document Understanding and Python SDK/APIs, leveraging pretrained models for key-value extraction, document ingestion via cloud Object Storage, and orchestrating ERP integration through Integration Cloud REST APIs with exception handling workflows.</li>
+        </ul>
+
+        <div class="exp-section-title">RAG, NL2SQL &amp; Conversational AI</div>
+        <ul class="exp-list">
+          <li>Developed an <strong>Analytics Copilot</strong> leveraging NL2SQL, GenAI, and RAG over enterprise metadata for natural-language querying across Financial (GL, AP, AR), Supply Chain, and HCM subject areas — generating validated SQL with AI-certified responses, reducing ad-hoc reporting by <strong>~60%</strong>.</li>
+          <li>Implemented enterprise <strong>Digital Assistant chatbot solutions</strong> for Fortune 500 clients across multiple engagements — deploying NL2SQL and AI governance frameworks with data warehouse, GenAI (Meta Llama), API Gateway, Redis, Python middleware, and security controls with monitoring and log validation.</li>
+          <li>Built an <strong>NL2SQL conversational AI system</strong> with Python REST API integrations and an automated prompt validation framework (Data Science/Jupyter) executing 60+ queries — capturing SQL generation accuracy, latency, and hallucination metrics.</li>
+        </ul>
+
+        <div class="exp-section-title">Enterprise Analytics &amp; Platform</div>
+        <ul class="exp-list">
+          <li>Delivered enterprise SaaS analytics across ERP, SCM, and HCM — configuring <strong>220+ reports</strong> in BI/analytics platform with AI Assistant integration, building KPI dashboards, and authoring an ERP/SCM Analytics Runbook adopted across delivery teams.</li>
+          <li>Executed cloud analytics platform migration including data warehouse/Snowflake connectivity and automated deployments — redesigned dashboards, resolved KPI and hierarchy issues, and performed end-to-end validation across Dev, Test, and Production environments.</li>
+        </ul>
+
+        <div class="exp-section-title">AI Testing, Validation &amp; Governance</div>
+        <ul class="exp-list">
+          <li>Built an enterprise-grade <strong>Conversational AI (NL2SQL)</strong> system with LLM-powered orchestration and a Python evaluation framework (Data Science/Jupyter) to benchmark prompts for accuracy, latency, and hallucination — ensuring RAG-grounded, reliable, production-ready AI.</li>
+          <li>Implemented <strong>anomaly detection</strong> algorithms for internal POCs, validated <strong>200+ NL Queries</strong> in AI Assistant for Inventory and Procurement subject areas, and scoped migration of 70+ reports across 7 dashboards for a Public Sector client.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">SAP ABAP Consultant — HCM &amp; Enterprise Analytics</div>
+            <div class="exp-company">Accenture · Bangalore, India</div>
+          </div>
+          <div class="exp-date">Jun 2010 – Sep 2012</div>
+        </div>
+        <ul class="exp-list">
+          <li>Developed custom <strong>SAP ABAP</strong> reports and data extraction solutions for HCM and MM modules — supporting workforce analytics, payroll reporting, and materials management across enterprise clients.</li>
+          <li>Collaborated with functional teams to translate business requirements into scalable reporting solutions using ABAP and BAPI integrations — building a strong foundation in enterprise data pipelines and HR analytics.</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-label">// Experience</div>
-  <div class="section-title">Where I've Built</div>
-  <div class="section-desc">Production-grade AI systems and enterprise analytics at scale.</div>
-
-  <div class="timeline">
-    <div class="timeline-item reveal">
-      <div class="timeline-header">
-        <div>
-          <div class="timeline-role">Cloud Engineer — AI, Agentic Systems & Analytics</div>
-          <div class="timeline-company">Oracle America Inc. (Cloud Engineering Services) · Dallas, TX</div>
-        </div>
-        <div class="timeline-date">Jun 2021 – Apr 2026</div>
-      </div>
-
-      <div class="timeline-category">Agentic AI & Multi-Agent Systems</div>
-      <ul class="timeline-bullets">
-        <li>Architected a Multi-Channel Order Entry Agent — a multi-agent system ingesting orders from email, SFTP, web portal, and phone channels using LLM-powered parsing, reducing manual processing time by ~70%.</li>
-        <li>Designed an HCM Hire-to-Retire Lifecycle Agent using Oracle AI Agent Studio integrated with Fusion HCM SaaS — enabling conversational self-service across the full employee lifecycle.</li>
-        <li>Built a Financial AI Agent with AI Agent Studio and AI Agent Factory, integrated with ADW via MCP, enabling natural-language variance analysis with zero data hallucination.</li>
-      </ul>
-
-      <div class="timeline-category">Cognitive AI — Computer Vision & Document Understanding</div>
-      <ul class="timeline-bullets">
-        <li>Led an end-to-end AI Vision and Document Understanding pipeline for a Public Sector client — from data annotation (CVAT) to model training, evaluation, and REST API deployment.</li>
-        <li>Built an intelligent invoice processing pipeline combining OCI Vision and Computer Vision to extract line-item data from multi-format vendor invoices with fuzzy matching and anomaly detection.</li>
-      </ul>
-
-      <div class="timeline-category">RAG, NL2SQL & Conversational AI</div>
-      <ul class="timeline-bullets">
-        <li>Developed an Analytics Copilot leveraging NL2SQL, GenAI, and RAG over enterprise data — reducing ad-hoc reporting requests by ~60%.</li>
-        <li>Architected Oracle Digital Assistant (ODA) chatbot solutions for Fortune 500 clients with governed natural-language access to enterprise data.</li>
-      </ul>
-
-      <div class="timeline-category">Enterprise Analytics & Governance</div>
-      <ul class="timeline-bullets">
-        <li>Delivered Oracle Fusion SaaS analytics across ERP, SCM, and HCM — configuring 220+ reports in OAC with AI Assistant integration.</li>
-        <li>Built ODAPromptTester automation framework to validate LLM-generated responses, executing 48+ NL prompts with performance tracking.</li>
-      </ul>
-    </div>
-
-    <div class="timeline-item reveal">
-      <div class="timeline-header">
-        <div>
-          <div class="timeline-role">SAP ABAP Consultant — HCM & Enterprise Analytics</div>
-          <div class="timeline-company">Accenture · Bangalore, India</div>
-        </div>
-        <div class="timeline-date">Jun 2010 – Sep 2012</div>
-      </div>
-      <ul class="timeline-bullets">
-        <li>Developed custom SAP ABAP reports and data extraction solutions for HCM and MM modules, supporting workforce analytics and payroll reporting.</li>
-        <li>Collaborated with functional teams to translate business requirements into scalable reporting solutions using ABAP and BAPI integrations.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FEATURED PROJECTS -->
-<section id="projects">
-  <div class="section-label">// Featured Projects</div>
-  <div class="section-title">AI Use Cases Delivered</div>
-  <div class="section-desc">Production systems solving real enterprise challenges.</div>
+<section id="projects" class="reveal">
+  <div class="section-tag">// Featured Projects</div>
+  <h2>AI Use Cases Delivered</h2>
+  <p class="section-lede">Production systems solving real enterprise challenges.</p>
 
   <div class="projects-grid">
-    <div class="project-card reveal">
+    <div class="project">
       <div class="project-icon">📋</div>
       <div class="project-title">Multi-Channel Order Entry Agent</div>
-      <div class="project-desc">Multi-agent orchestration system that ingests customer orders from email, SFTP, web portal, and phone channels using LLM-powered document parsing — normalizes formats into a canonical data model and triggers fulfillment via Oracle Fusion SCM APIs.</div>
+      <p class="project-desc">Multi-agent orchestration system that ingests customer orders from email, SFTP, web portal, and phone channels using LLM-powered document parsing — normalizes formats into a canonical data model and triggers fulfillment via ERP REST APIs.</p>
       <div class="project-tags">
         <span class="tag">Multi-Agent</span>
         <span class="tag">LLM Parsing</span>
         <span class="tag">FastAPI</span>
-        <span class="tag">ADW</span>
-        <span class="tag">Fusion SCM</span>
+        <span class="tag">Cloud DW</span>
+        <span class="tag">ERP APIs</span>
       </div>
     </div>
 
-    <div class="project-card reveal">
+    <div class="project">
       <div class="project-icon">👤</div>
       <div class="project-title">HCM Hire-to-Retire Agent</div>
-      <div class="project-desc">Conversational AI agent for full employee lifecycle — offer letters, onboarding, benefits enrollment, and attrition risk flagging — powered by RAG over HR policy corpora with Vector Search and governed by Trust AI framework.</div>
+      <p class="project-desc">Conversational AI agent for the full employee lifecycle — offer letters, onboarding, benefits enrollment, and attrition risk flagging — powered by RAG over HR policy corpora with Vector Search and governed by an AI trust framework.</p>
       <div class="project-tags">
-        <span class="tag">AI Agent Studio</span>
+        <span class="tag">Agent Studio</span>
         <span class="tag">RAG</span>
         <span class="tag">Vector Search</span>
-        <span class="tag">Fusion HCM</span>
+        <span class="tag">HCM SaaS</span>
       </div>
     </div>
 
-    <div class="project-card reveal">
+    <div class="project">
       <div class="project-icon">💰</div>
       <div class="project-title">Financial AI Agent</div>
-      <div class="project-desc">Natural-language variance analysis across fiscal periods with zero hallucination — agent routing logic for multi-step financial queries spanning GL, AP, and AR with LangGraph-style orchestration.</div>
+      <p class="project-desc">Natural-language variance analysis across fiscal periods with zero hallucination — agent routing logic for multi-step financial queries spanning GL, AP, and AR with LangGraph-style orchestration and MCP integration.</p>
       <div class="project-tags">
-        <span class="tag">Agent Factory</span>
-        <span class="tag">MCP</span>
         <span class="tag">LangGraph</span>
-        <span class="tag">ADW</span>
+        <span class="tag">MCP</span>
+        <span class="tag">Cloud DW</span>
+        <span class="tag">NL2SQL</span>
       </div>
     </div>
 
-    <div class="project-card reveal">
+    <div class="project">
       <div class="project-icon">🔍</div>
       <div class="project-title">Public Sector AI Vision Pipeline</div>
-      <div class="project-desc">End-to-end pipeline for citizen-submitted documents — custom annotation schemas in CVAT, OCI Vision model training for classification, object detection, text extraction, and production REST API deployment.</div>
+      <p class="project-desc">End-to-end vision pipeline on traffic surveillance data — CVAT annotation, YOLOv8 training with transfer learning, FastAPI REST deployment, and a LangGraph multi-agent orchestration layer with GPT-4o Vision, delivered as three interactive Streamlit apps.</p>
       <div class="project-tags">
-        <span class="tag">OCI Vision</span>
+        <span class="tag">YOLOv8</span>
+        <span class="tag">GPT-4o Vision</span>
         <span class="tag">CVAT</span>
-        <span class="tag">Document AI</span>
-        <span class="tag">REST API</span>
+        <span class="tag">LangGraph</span>
+        <span class="tag">Streamlit</span>
       </div>
     </div>
 
-    <div class="project-card reveal">
+    <div class="project">
       <div class="project-icon">📊</div>
       <div class="project-title">Analytics Copilot</div>
-      <div class="project-desc">NL2SQL agent with GenAI and RAG over enterprise data dictionaries — natural-language querying across Financial, Supply Chain, and HCM domains with AI-certified responses and source lineage.</div>
+      <p class="project-desc">NL2SQL agent with GenAI and RAG over enterprise data dictionaries — natural-language querying across Financial, Supply Chain, and HCM domains with AI-certified responses and source lineage. Reduced ad-hoc reporting by ~60%.</p>
       <div class="project-tags">
         <span class="tag">NL2SQL</span>
-        <span class="tag">Select AI</span>
         <span class="tag">RAG</span>
         <span class="tag">GenAI</span>
-        <span class="tag">OAC</span>
+        <span class="tag">Cloud DW</span>
       </div>
     </div>
 
-    <div class="project-card reveal">
+    <div class="project">
       <div class="project-icon">📄</div>
-      <div class="project-title">Intelligent Invoice Processing</div>
-      <div class="project-desc">Computer Vision + Document Understanding pipeline to extract line-item data from multi-format vendor invoices, matching against Procurement POs with fuzzy matching and anomaly detection.</div>
+      <div class="project-title">Sales Order Automation (O2C)</div>
+      <p class="project-desc">AI-driven Order-to-Cash automation using cloud Document Understanding and Python SDK/APIs — key-value extraction with pretrained models, ingestion via Object Storage, and ERP integration through Integration Cloud REST APIs with exception handling.</p>
       <div class="project-tags">
-        <span class="tag">Computer Vision</span>
-        <span class="tag">Anomaly Detection</span>
-        <span class="tag">Fusion ERP</span>
-        <span class="tag">APEX</span>
+        <span class="tag">Document AI</span>
+        <span class="tag">Python SDK</span>
+        <span class="tag">Integration Cloud</span>
+        <span class="tag">ERP</span>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-label">// Technical Skills</div>
-  <div class="section-title">My Toolkit</div>
-  <div class="section-desc">Technologies and frameworks I work with daily.</div>
+<section id="skills" class="reveal">
+  <div class="section-tag">// Technical Skills</div>
+  <h2>My Toolkit</h2>
+  <p class="section-lede">Technologies and frameworks I work with daily.</p>
 
   <div class="skills-grid">
-    <div class="skill-group reveal">
-      <div class="skill-group-title">AI & Agentic Systems</div>
-      <div class="skill-items">
-        <span class="skill-tag">AI Agent Studio</span>
-        <span class="skill-tag">LLM Orchestration</span>
-        <span class="skill-tag">Multi-Agent Systems</span>
-        <span class="skill-tag">LangChain</span>
-        <span class="skill-tag">LangGraph</span>
-        <span class="skill-tag">CrewAI</span>
-        <span class="skill-tag">OpenAI GPT</span>
-        <span class="skill-tag">Claude</span>
-        <span class="skill-tag">RAG</span>
-        <span class="skill-tag">Vector Search</span>
-        <span class="skill-tag">NL2SQL</span>
-        <span class="skill-tag">Prompt Engineering</span>
-        <span class="skill-tag">MCP</span>
+    <div class="skill-card">
+      <div class="skill-cat-title">AI &amp; Agentic Systems</div>
+      <div class="skill-list">
+        <span class="skill-pill">LLM Orchestration</span>
+        <span class="skill-pill">Multi-Agent Systems</span>
+        <span class="skill-pill">LangChain</span>
+        <span class="skill-pill">LangGraph</span>
+        <span class="skill-pill">CrewAI</span>
+        <span class="skill-pill">OpenAI GPT</span>
+        <span class="skill-pill">Claude</span>
+        <span class="skill-pill">RAG</span>
+        <span class="skill-pill">Vector Search</span>
+        <span class="skill-pill">Pinecone</span>
+        <span class="skill-pill">NL2SQL</span>
+        <span class="skill-pill">Prompt Engineering</span>
+        <span class="skill-pill">MCP</span>
+        <span class="skill-pill">MLOps / LLMOps</span>
+        <span class="skill-pill">Workato Agent Studio</span>
       </div>
     </div>
 
-    <div class="skill-group reveal">
-      <div class="skill-group-title">Cognitive AI & ML</div>
-      <div class="skill-items">
-        <span class="skill-tag">OCI GenAI</span>
-        <span class="skill-tag">Computer Vision</span>
-        <span class="skill-tag">Document Understanding</span>
-        <span class="skill-tag">Anomaly Detection</span>
-        <span class="skill-tag">TensorFlow</span>
-        <span class="skill-tag">PyTorch</span>
-        <span class="skill-tag">Scikit-learn</span>
-        <span class="skill-tag">Data Annotation</span>
+    <div class="skill-card">
+      <div class="skill-cat-title">Cognitive AI &amp; ML</div>
+      <div class="skill-list">
+        <span class="skill-pill">GenAI</span>
+        <span class="skill-pill">Computer Vision</span>
+        <span class="skill-pill">YOLOv8</span>
+        <span class="skill-pill">OpenCV</span>
+        <span class="skill-pill">Document Understanding</span>
+        <span class="skill-pill">Anomaly Detection</span>
+        <span class="skill-pill">TensorFlow</span>
+        <span class="skill-pill">PyTorch</span>
+        <span class="skill-pill">Scikit-learn</span>
+        <span class="skill-pill">Data Annotation (CVAT)</span>
+        <span class="skill-pill">AI Evaluation</span>
       </div>
     </div>
 
-    <div class="skill-group reveal">
-      <div class="skill-group-title">Languages & Frameworks</div>
-      <div class="skill-items">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">REST APIs</span>
-        <span class="skill-tag">FastAPI</span>
-        <span class="skill-tag">XML</span>
-        <span class="skill-tag">ABAP</span>
+    <div class="skill-card">
+      <div class="skill-cat-title">Languages &amp; Frameworks</div>
+      <div class="skill-list">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">REST APIs</span>
+        <span class="skill-pill">FastAPI</span>
+        <span class="skill-pill">Streamlit</span>
+        <span class="skill-pill">XML</span>
+        <span class="skill-pill">ABAP</span>
       </div>
     </div>
 
-    <div class="skill-group reveal">
-      <div class="skill-group-title">Cloud & Infrastructure</div>
-      <div class="skill-items">
-        <span class="skill-tag">OCI</span>
-        <span class="skill-tag">Azure</span>
-        <span class="skill-tag">Docker</span>
-        <span class="skill-tag">API Gateway</span>
-        <span class="skill-tag">Redis</span>
-        <span class="skill-tag">ADW</span>
-        <span class="skill-tag">Object Storage</span>
-        <span class="skill-tag">IDCS/Vault</span>
-        <span class="skill-tag">Spark</span>
+    <div class="skill-card">
+      <div class="skill-cat-title">Cloud &amp; Infrastructure</div>
+      <div class="skill-list">
+        <span class="skill-pill">AWS</span>
+        <span class="skill-pill">Azure</span>
+        <span class="skill-pill">OCI</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">Kubernetes</span>
+        <span class="skill-pill">Microservices</span>
+        <span class="skill-pill">API Gateway</span>
+        <span class="skill-pill">Redis</span>
+        <span class="skill-pill">Cloud Data Warehouse</span>
+        <span class="skill-pill">Object Storage</span>
+        <span class="skill-pill">Spark</span>
+        <span class="skill-pill">CI/CD · Git</span>
       </div>
     </div>
 
-    <div class="skill-group reveal">
-      <div class="skill-group-title">Analytics & Visualization</div>
-      <div class="skill-items">
-        <span class="skill-tag">OAC (Classic & DV)</span>
-        <span class="skill-tag">Power BI</span>
-        <span class="skill-tag">Tableau</span>
-        <span class="skill-tag">Oracle Data Science</span>
-        <span class="skill-tag">KPI Dashboards</span>
-        <span class="skill-tag">Data Visualization</span>
+    <div class="skill-card">
+      <div class="skill-cat-title">Analytics &amp; Visualization</div>
+      <div class="skill-list">
+        <span class="skill-pill">Power BI</span>
+        <span class="skill-pill">Tableau</span>
+        <span class="skill-pill">Oracle Analytics</span>
+        <span class="skill-pill">Data Science / Jupyter</span>
+        <span class="skill-pill">KPI Dashboards</span>
+        <span class="skill-pill">Data Visualization</span>
       </div>
     </div>
 
-    <div class="skill-group reveal">
-      <div class="skill-group-title">Enterprise SaaS</div>
-      <div class="skill-items">
-        <span class="skill-tag">Oracle Fusion ERP</span>
-        <span class="skill-tag">Fusion SCM</span>
-        <span class="skill-tag">Fusion HCM</span>
-        <span class="skill-tag">SAP HCM</span>
-        <span class="skill-tag">SuccessFactors</span>
-        <span class="skill-tag">APEX</span>
-        <span class="skill-tag">VBCS</span>
+    <div class="skill-card">
+      <div class="skill-cat-title">Enterprise SaaS</div>
+      <div class="skill-list">
+        <span class="skill-pill">Enterprise ERP</span>
+        <span class="skill-pill">SCM</span>
+        <span class="skill-pill">HCM</span>
+        <span class="skill-pill">SAP HCM</span>
+        <span class="skill-pill">SuccessFactors</span>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<section id="education" class="reveal">
+  <div class="section-tag">// Education &amp; Certifications</div>
+  <h2>Credentials</h2>
 
-<!-- EDUCATION & CERTS -->
-<section id="education">
-  <div class="section-label">// Education & Certifications</div>
-  <div class="section-title">Credentials</div>
-
-  <div class="edu-certs-grid">
+  <div class="creds-grid">
     <div>
-      <div class="section-label" style="margin-bottom: 1.5rem;">Education</div>
-      <div class="edu-card reveal">
+      <div class="creds-sub">Education</div>
+      <div class="edu-card">
         <div class="edu-degree">MS in Business Analytics</div>
-        <div class="edu-school">Texas A&M University, Commerce</div>
+        <div class="edu-school">Texas A&amp;M University</div>
         <div class="edu-date">Aug 2016 – Dec 2019</div>
       </div>
-      <div class="edu-card reveal">
+      <div class="edu-card">
         <div class="edu-degree">B.E. in Computer Science</div>
         <div class="edu-school">Rajiv Gandhi Technical University, India</div>
         <div class="edu-date">Jul 2004 – Dec 2008</div>
@@ -1175,98 +1032,67 @@
     </div>
 
     <div>
-      <div class="section-label" style="margin-bottom: 1.5rem;">Certifications</div>
-
-      <div class="cert-category">AI & GenAI</div>
-      <ul class="cert-list">
-        <li class="cert-item"><span class="cert-bullet">◆</span> Fusion AI Agent Studio Foundations</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> AI Vector Search Professional</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> OCI GenAI Certified Professional</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> OCI Data Science Professional</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> OCI AI Foundations Associate</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> Generative AI (Microsoft/LinkedIn)</li>
-      </ul>
-
-      <div class="cert-category">Cloud & Architecture</div>
-      <ul class="cert-list">
-        <li class="cert-item"><span class="cert-bullet">◆</span> OCI Architect Professional</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> OCI Developer Professional</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> OCI Cloud Operations Professional</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> Autonomous DB Cloud Professional</li>
-      </ul>
-
-      <div class="cert-category">Analytics & Enterprise</div>
-      <ul class="cert-list">
-        <li class="cert-item"><span class="cert-bullet">◆</span> OCI Enterprise Analytics Professional</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> SAP SuccessFactors EC Associate</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> SAP Data Intelligence for AI</li>
-        <li class="cert-item"><span class="cert-bullet">◆</span> Certified ScrumMaster</li>
-      </ul>
+      <div class="creds-sub">Certifications</div>
+      <div class="cert-group">
+        <div class="cert-group-title">AI &amp; GenAI</div>
+        <ul class="cert-list">
+          <li>Oracle Fusion AI Agent Studio Foundations</li>
+          <li>Oracle AI Vector Search Professional</li>
+          <li>OCI GenAI Certified Professional</li>
+          <li>OCI Data Science Professional</li>
+          <li>OCI AI Foundations Associate</li>
+          <li>Generative AI (Microsoft/LinkedIn)</li>
+        </ul>
+      </div>
+      <div class="cert-group">
+        <div class="cert-group-title">Cloud &amp; Architecture</div>
+        <ul class="cert-list">
+          <li>AWS Certified Cloud Practitioner</li>
+          <li>Microsoft Certified: Azure Fundamentals</li>
+          <li>OCI Architect Professional</li>
+          <li>OCI Developer Professional</li>
+          <li>OCI Cloud Operations Professional</li>
+          <li>Autonomous DB Cloud Professional</li>
+        </ul>
+      </div>
+      <div class="cert-group">
+        <div class="cert-group-title">Analytics &amp; Enterprise</div>
+        <ul class="cert-list">
+          <li>OCI Enterprise Analytics Professional</li>
+          <li>SAP SuccessFactors EC Associate</li>
+          <li>SAP Data Intelligence for AI</li>
+          <li>Certified ScrumMaster</li>
+          <li>Oracle MySQL Implementation Associate</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- CONTACT -->
-<section id="contact" class="contact-section">
-  <div class="section-label">// Let's Connect</div>
-  <div class="section-title">Ready to Build<br><span class="gradient-text" style="background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Something Intelligent?</span></div>
-  <div class="section-desc" style="text-align: center;">I'm always open to discussing AI engineering roles, agentic system design, or collaboration opportunities.</div>
-
+<section id="contact" class="reveal">
+  <div class="section-tag">// Let's Connect</div>
+  <h2>Ready to Build<br/><span class="gradient-text">Something Intelligent?</span></h2>
+  <p class="contact-lede">I'm always open to discussing AI engineering roles, agentic system design, or collaboration opportunities.</p>
   <div class="contact-links">
-    <a href="mailto:richa.agenticai@gmail.com" class="contact-card">
-      <span class="contact-icon">✉️</span>
-      richa.agenticai@gmail.com
-    </a>
-    <a href="tel:+14696006426" class="contact-card">
-      <span class="contact-icon">📱</span>
-      +1-469-600-6426
-    </a>
-    <a href="https://linkedin.com/in/richamathurr" target="_blank" class="contact-card">
-      <span class="contact-icon">🔗</span>
-      LinkedIn
-    </a>
-    <a href="https://github.com/richamathur-flex" target="_blank" class="contact-card">
-      <span class="contact-icon">💻</span>
-      GitHub
-    </a>
-    <a href="https://medium.com/@richamathurr" target="_blank" class="contact-card">
-      <span class="contact-icon">✍️</span>
-      Medium
-    </a>
-    <a href="https://orcid.org/0009-0007-1037-7169" target="_blank" class="contact-card">
-      <span class="contact-icon">🆔</span>
-      ORCID
-    </a>
+    <a href="mailto:richa.agenticai@gmail.com" class="contact-link"><span class="icon">✉️</span> richa.agenticai@gmail.com</a>
+    <a href="tel:+14696006426" class="contact-link"><span class="icon">📱</span> +1-469-600-6426</a>
+    <a href="https://linkedin.com/in/richamathurr" class="contact-link" target="_blank" rel="noopener"><span class="icon">🔗</span> LinkedIn</a>
+    <a href="https://github.com/richamathur-flex" class="contact-link" target="_blank" rel="noopener"><span class="icon">💻</span> GitHub</a>
+    <a href="https://medium.com/@richamathurr" class="contact-link" target="_blank" rel="noopener"><span class="icon">✍️</span> Medium</a>
+    <a href="https://orcid.org/0009-0007-1037-7169" class="contact-link" target="_blank" rel="noopener"><span class="icon">🆔</span> ORCID</a>
   </div>
-
-  <a href="mailto:richa.agenticai@gmail.com" class="btn btn-primary" style="font-size: 1rem; padding: 1rem 2.5rem;">Send Me a Message →</a>
+  <a href="mailto:richa.agenticai@gmail.com" class="btn btn-primary">Send Me a Message →</a>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Richa Mathur · Built with passion for AI</p>
-</footer>
+<footer>© 2026 Richa Mathur · Built with passion for AI</footer>
 
-<!-- SCROLL REVEAL SCRIPT -->
 <script>
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Close mobile nav on link click
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.remove('open');
-    });
-  });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 </script>
 
 </body>
